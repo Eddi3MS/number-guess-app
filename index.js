@@ -146,6 +146,10 @@ sendGuess.addEventListener("click", () => {
     text.style.color = "#cc3300";
     text.innerHTML = "Escolha um número entre 1 e 300.";
 
+    // enabling the inputs  \\
+    input.disabled = true;
+    sendGuess.disabled = true;
+
     // showing the newGame button \\
     newGame.style.display = "flex";
 
