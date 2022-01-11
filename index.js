@@ -50,6 +50,10 @@ async function GetData() {
     text.style.color = "#cc3300";
     text.innerHTML = "Erro!!";
 
+    // disabling the inputs \\
+    input.disabled = true;
+    sendGuess.disabled = true;
+
     // showing the NEWGAME button \\
     newGame.style.display = "flex";
   }
