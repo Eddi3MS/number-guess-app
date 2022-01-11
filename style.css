@@ -1,0 +1,306 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(rgb(238, 238, 238), rgb(255, 255, 255));
+
+  font-family: Montserrat, sans-serif;
+}
+
+.coverAll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+
+  background: linear-gradient(rgb(238, 238, 238), rgb(255, 255, 255));
+  z-index: 999;
+}
+
+h1 {
+  font-size: 3rem;
+  background: linear-gradient(#ef6c00, #db6300);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-transform: uppercase;
+}
+
+p.warningText {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #262a34;
+  text-align: center;
+}
+
+p.warningText.success {
+  color: #32bf00;
+}
+
+p.warningText.erro {
+  color: #cc3300;
+}
+
+.guessInput {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-block: 2rem;
+}
+input {
+  height: 42px;
+  border: 1px solid #ff6600;
+  border-radius: 4px;
+  min-width: 250px;
+  padding-left: 1rem;
+}
+
+input:disabled {
+  border: 1px solid #ccc;
+}
+
+button:disabled {
+  background: linear-gradient(#434854, #9e9e9e);
+  cursor: default;
+}
+
+button {
+  border-radius: 4px;
+  height: 42px;
+  background: linear-gradient(#ef6c00, #db6300);
+  border: 0;
+  font-size: 0.75rem;
+  font-weight: bold;
+  font-family: Roboto, sans-serif;
+  cursor: pointer;
+  padding-inline: 0.6rem;
+  color: #fff;
+}
+.guessTheNumber {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button.newGame {
+  display: none;
+  justify-content: space-around;
+  justify-self: center;
+  align-items: center;
+  max-width: 130px;
+  border-radius: 4px;
+  height: 42px;
+  background: linear-gradient(#ef6c00, #db6300);
+
+  margin-block: 1.3rem;
+}
+
+button.newGame img {
+  width: 24px;
+}
+
+.guessTheNumber .number {
+  margin: 30px;
+  font-size: 0;
+}
+
+.guessTheNumber svg {
+  display: inline-block;
+  margin: 20px;
+}
+.guessTheNumber svg .segment {
+  fill: #dddddda1;
+
+  transition: 0.3s ease-in-out;
+}
+
+.guessTheNumber svg.num-1 .b,
+.guessTheNumber svg.num-1 .c,
+.guessTheNumber svg.num-2 .a,
+.guessTheNumber svg.num-2 .b,
+.guessTheNumber svg.num-2 .d,
+.guessTheNumber svg.num-2 .e,
+.guessTheNumber svg.num-2 .g,
+.guessTheNumber svg.num-3 .a,
+.guessTheNumber svg.num-3 .b,
+.guessTheNumber svg.num-3 .c,
+.guessTheNumber svg.num-3 .d,
+.guessTheNumber svg.num-3 .g,
+.guessTheNumber svg.num-4 .b,
+.guessTheNumber svg.num-4 .c,
+.guessTheNumber svg.num-4 .f,
+.guessTheNumber svg.num-4 .g,
+.guessTheNumber svg.num-5 .a,
+.guessTheNumber svg.num-5 .c,
+.guessTheNumber svg.num-5 .d,
+.guessTheNumber svg.num-5 .f,
+.guessTheNumber svg.num-5 .g,
+.guessTheNumber svg.num-6 .a,
+.guessTheNumber svg.num-6 .c,
+.guessTheNumber svg.num-6 .d,
+.guessTheNumber svg.num-6 .e,
+.guessTheNumber svg.num-6 .f,
+.guessTheNumber svg.num-6 .g,
+.guessTheNumber svg.num-7 .a,
+.guessTheNumber svg.num-7 .b,
+.guessTheNumber svg.num-7 .c,
+.guessTheNumber svg.num-8 .a,
+.guessTheNumber svg.num-8 .b,
+.guessTheNumber svg.num-8 .c,
+.guessTheNumber svg.num-8 .d,
+.guessTheNumber svg.num-8 .e,
+.guessTheNumber svg.num-8 .f,
+.guessTheNumber svg.num-8 .g,
+.guessTheNumber svg.num-9 .a,
+.guessTheNumber svg.num-9 .b,
+.guessTheNumber svg.num-9 .c,
+.guessTheNumber svg.num-9 .d,
+.guessTheNumber svg.num-9 .f,
+.guessTheNumber svg.num-9 .g,
+.guessTheNumber svg.num-0 .a,
+.guessTheNumber svg.num-0 .b,
+.guessTheNumber svg.num-0 .c,
+.guessTheNumber svg.num-0 .d,
+.guessTheNumber svg.num-0 .e,
+.guessTheNumber svg.num-0 .f {
+  fill: #262a34;
+}
+
+.guessTheNumber .numbers.success svg.num-1 .b,
+.guessTheNumber .numbers.success svg.num-1 .c,
+.guessTheNumber .numbers.success svg.num-2 .a,
+.guessTheNumber .numbers.success svg.num-2 .b,
+.guessTheNumber .numbers.success svg.num-2 .d,
+.guessTheNumber .numbers.success svg.num-2 .e,
+.guessTheNumber .numbers.success svg.num-2 .g,
+.guessTheNumber .numbers.success svg.num-3 .a,
+.guessTheNumber .numbers.success svg.num-3 .b,
+.guessTheNumber .numbers.success svg.num-3 .c,
+.guessTheNumber .numbers.success svg.num-3 .d,
+.guessTheNumber .numbers.success svg.num-3 .g,
+.guessTheNumber .numbers.success svg.num-4 .b,
+.guessTheNumber .numbers.success svg.num-4 .c,
+.guessTheNumber .numbers.success svg.num-4 .f,
+.guessTheNumber .numbers.success svg.num-4 .g,
+.guessTheNumber .numbers.success svg.num-5 .a,
+.guessTheNumber .numbers.success svg.num-5 .c,
+.guessTheNumber .numbers.success svg.num-5 .d,
+.guessTheNumber .numbers.success svg.num-5 .f,
+.guessTheNumber .numbers.success svg.num-5 .g,
+.guessTheNumber .numbers.success svg.num-6 .a,
+.guessTheNumber .numbers.success svg.num-6 .c,
+.guessTheNumber .numbers.success svg.num-6 .d,
+.guessTheNumber .numbers.success svg.num-6 .e,
+.guessTheNumber .numbers.success svg.num-6 .f,
+.guessTheNumber .numbers.success svg.num-6 .g,
+.guessTheNumber .numbers.success svg.num-7 .a,
+.guessTheNumber .numbers.success svg.num-7 .b,
+.guessTheNumber .numbers.success svg.num-7 .c,
+.guessTheNumber .numbers.success svg.num-8 .a,
+.guessTheNumber .numbers.success svg.num-8 .b,
+.guessTheNumber .numbers.success svg.num-8 .c,
+.guessTheNumber .numbers.success svg.num-8 .d,
+.guessTheNumber .numbers.success svg.num-8 .e,
+.guessTheNumber .numbers.success svg.num-8 .f,
+.guessTheNumber .numbers.success svg.num-8 .g,
+.guessTheNumber .numbers.success svg.num-9 .a,
+.guessTheNumber .numbers.success svg.num-9 .b,
+.guessTheNumber .numbers.success svg.num-9 .c,
+.guessTheNumber .numbers.success svg.num-9 .d,
+.guessTheNumber .numbers.success svg.num-9 .f,
+.guessTheNumber .numbers.success svg.num-9 .g,
+.guessTheNumber .numbers.success svg.num-0 .a,
+.guessTheNumber .numbers.success svg.num-0 .b,
+.guessTheNumber .numbers.success svg.num-0 .c,
+.guessTheNumber .numbers.success svg.num-0 .d,
+.guessTheNumber .numbers.success svg.num-0 .e,
+.guessTheNumber .numbers.success svg.num-0 .f {
+  fill: green !important;
+}
+
+.guessTheNumber .numbers.error svg.num-1 .b,
+.guessTheNumber .numbers.error svg.num-1 .c,
+.guessTheNumber .numbers.error svg.num-2 .a,
+.guessTheNumber .numbers.error svg.num-2 .b,
+.guessTheNumber .numbers.error svg.num-2 .d,
+.guessTheNumber .numbers.error svg.num-2 .e,
+.guessTheNumber .numbers.error svg.num-2 .g,
+.guessTheNumber .numbers.error svg.num-3 .a,
+.guessTheNumber .numbers.error svg.num-3 .b,
+.guessTheNumber .numbers.error svg.num-3 .c,
+.guessTheNumber .numbers.error svg.num-3 .d,
+.guessTheNumber .numbers.error svg.num-3 .g,
+.guessTheNumber .numbers.error svg.num-4 .b,
+.guessTheNumber .numbers.error svg.num-4 .c,
+.guessTheNumber .numbers.error svg.num-4 .f,
+.guessTheNumber .numbers.error svg.num-4 .g,
+.guessTheNumber .numbers.error svg.num-5 .a,
+.guessTheNumber .numbers.error svg.num-5 .c,
+.guessTheNumber .numbers.error svg.num-5 .d,
+.guessTheNumber .numbers.error svg.num-5 .f,
+.guessTheNumber .numbers.error svg.num-5 .g,
+.guessTheNumber .numbers.error svg.num-6 .a,
+.guessTheNumber .numbers.error svg.num-6 .c,
+.guessTheNumber .numbers.error svg.num-6 .d,
+.guessTheNumber .numbers.error svg.num-6 .e,
+.guessTheNumber .numbers.error svg.num-6 .f,
+.guessTheNumber .numbers.error svg.num-6 .g,
+.guessTheNumber .numbers.error svg.num-7 .a,
+.guessTheNumber .numbers.error svg.num-7 .b,
+.guessTheNumber .numbers.error svg.num-7 .c,
+.guessTheNumber .numbers.error svg.num-8 .a,
+.guessTheNumber .numbers.error svg.num-8 .b,
+.guessTheNumber .numbers.error svg.num-8 .c,
+.guessTheNumber .numbers.error svg.num-8 .d,
+.guessTheNumber .numbers.error svg.num-8 .e,
+.guessTheNumber .numbers.error svg.num-8 .f,
+.guessTheNumber .numbers.error svg.num-8 .g,
+.guessTheNumber .numbers.error svg.num-9 .a,
+.guessTheNumber .numbers.error svg.num-9 .b,
+.guessTheNumber .numbers.error svg.num-9 .c,
+.guessTheNumber .numbers.error svg.num-9 .d,
+.guessTheNumber .numbers.error svg.num-9 .f,
+.guessTheNumber .numbers.error svg.num-9 .g,
+.guessTheNumber .numbers.error svg.num-0 .a,
+.guessTheNumber .numbers.error svg.num-0 .b,
+.guessTheNumber .numbers.error svg.num-0 .c,
+.guessTheNumber .numbers.error svg.num-0 .d,
+.guessTheNumber .numbers.error svg.num-0 .e,
+.guessTheNumber .numbers.error svg.num-0 .f {
+  fill: #cc3300 !important;
+}
+
+.guessTheNumber svg.num-null {
+  display: none !important;
+}
+
+@media (max-width: 540px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .guessTheNumber .number {
+    margin: 20px;
+    font-size: 0;
+  }
+
+  .guessTheNumber svg {
+    display: inline-block;
+    margin: 10px;
+    width: 90px;
+  }
+}
